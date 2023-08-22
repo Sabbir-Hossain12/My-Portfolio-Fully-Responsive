@@ -1,0 +1,313 @@
+@media(max-width: 1366px)
+{
+
+  .text-color
+  {
+  
+    color: white !important;
+    transition: 1sec;
+    font-size: 1.2rem !important;
+    font-weight: 300;
+    letter-spacing: 5px;
+  }
+  
+/* INTRO IMAGE */
+.me-img
+{
+  
+  max-height: 25rem;
+  max-width: 25rem;
+  border: 1.5rem solid white;
+  
+}
+
+/* HEADER AND SUB-HEADER */
+.header
+{
+  font-weight:700;
+ 
+  color: white;
+  font-size: 7.18rem;
+  font-family: 'Big Shoulders Display', cursive;
+
+}
+.header-big
+{
+  margin: 0 0 5rem 0rem;
+
+}
+
+
+.subheader
+{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-align: start;
+  display: inline;
+  font-size: 1.2rem;
+  padding: .6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  
+}
+
+
+
+}
+
+/* 1080p */
+@media(max-width: 1080px)
+{
+
+  .text-color
+  {
+  
+    color: white !important;
+    transition: 1sec;
+    font-size: 1.2rem !important;
+    font-weight: 300;
+    letter-spacing: 5px;
+  }
+  
+/* INTRO IMAGE */
+.me-img
+{
+  
+  max-height: 20rem;
+  max-width: 20rem;
+  border: 1rem solid white;
+  
+}
+
+/* HEADER AND SUB-HEADER */
+.header
+{
+  font-weight:700;
+ 
+  color: white;
+  font-size: 6.18rem;
+  font-family: 'Big Shoulders Display', cursive;
+
+}
+.subheader
+{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-align: start;
+  display: inline;
+  font-size: 1rem;
+  padding: .6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  
+}
+.header-big
+{
+  margin: 0 0 4rem 0rem;
+
+}
+
+
+
+
+
+}
+
+
+@media(max-width: 920px)
+{
+
+
+  
+/* INTRO IMAGE */
+.me-img
+{
+  
+  max-height: 15rem;
+  max-width: 15rem;
+  border: 1rem solid white;
+  
+}
+
+/* HEADER AND SUB-HEADER */
+.header
+{
+  font-weight:700;
+ 
+  color: white;
+  font-size: 6.18rem;
+  font-family: 'Big Shoulders Display', cursive;
+
+}
+.subheader
+{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-align: start;
+  display: inline;
+  font-size: 1rem;
+  padding: .6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  
+}
+.header-big
+{
+  margin: 0 0 4rem 0rem;
+
+}
+
+
+
+
+
+}
+/* 830px */
+@media(max-width: 830px)
+{
+
+  
+/* INTRO IMAGE */
+.me-img
+{
+  
+  max-height: 15rem;
+  max-width: 15rem;
+  border: 1rem solid white;
+  
+}
+
+/* HEADER AND SUB-HEADER */
+.header
+{
+  font-weight:700;
+ 
+  color: white;
+  font-size: 5.18rem;
+  font-family: 'Big Shoulders Display', cursive;
+
+}
+.subheader
+{
+  font-family: 'Be Vietnam Pro', sans-serif;
+  text-align: start;
+  display: inline;
+  font-size: .9rem;
+  padding: .6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  
+}
+.header-big
+{
+  margin: 0 0 4rem 0rem;
+
+}
+
+
+}
+
+/* 735 */
+@media(max-width:735px)
+{
+
+  .header
+  {
+    font-weight:700;
+   
+    color: white;
+    font-size: 4.18rem;
+    font-family: 'Big Shoulders Display', cursive;
+  
+  }
+  .header-big
+  {
+    margin: 0 0 3rem 0rem;
+  
+  }
+
+  .me-img
+{
+  
+  max-height: 15rem;
+  max-width: 15rem;
+  border: .8rem solid white;
+  
+}
+
+}
+/* 660px */
+@media(max-width:660px)
+{
+
+  .header
+  {
+    font-weight:700;
+   
+    color: white;
+    font-size: 3.9rem;
+    font-family: 'Big Shoulders Display', cursive;
+  
+  }
+  .header-big
+  {
+    margin: 0 0 3rem 0rem;
+  
+  }
+
+  .me-img
+{
+  
+  max-height: 15rem;
+  max-width: 15rem;
+  border: .8rem solid white;
+  
+}
+
+.img-banner-pos
+{
+  padding: none!important;
+}
+.subheader
+{
+  
+  font-size: .7rem;
+  padding: .6rem;
+  
+  
+}
+
+}
+
+
+
+
+@media(max-width:570px)
+{
+  .img-banner-pos
+  {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+.secondary-info
+{
+  margin-top: 2rem!important;
+}
+
+}
+
+@media(max-width:350px)
+{
+  .img-banner-pos
+  {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .header
+  {
+    font-weight:700;
+   
+    color: white;
+    font-size: 3.2rem;
+    font-family: 'Big Shoulders Display', cursive;
+  
+  }
+
+}
