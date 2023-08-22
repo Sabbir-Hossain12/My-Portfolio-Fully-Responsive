@@ -37,8 +37,8 @@ p{
 }
 .background1
 {
-  background-color: #495057;
-  background-image: url("/images/Banner2.png")  !important;
+  
+  background-image: url("images/Banner2.png")  !important;
   
   width: 100%;
   height: 100vh;
