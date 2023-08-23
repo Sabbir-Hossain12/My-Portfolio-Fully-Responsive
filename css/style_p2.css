@@ -1,0 +1,142 @@
+
+
+/*---------services--------*/
+/*---------skills--------*/
+/*---------line skills--------*/
+.line_content .line {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.line_content p {
+  text-transform: uppercase;
+  width: 35%;
+}
+
+.line_content h5 {
+  background: #30D3FF;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 12px;
+}
+
+.line_content h5::after {
+  position: absolute;
+  content: '';
+  left: -4px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  background: #30D3FF;
+  transform: rotate(45deg);
+}
+
+.line_content .line:nth-child(2) h5::after,
+.line_content .line:nth-child(2) h5 {
+  background: #FF761B;
+}
+
+.line_content .line:nth-child(3) h5::after,
+.line_content .line:nth-child(3) h5 {
+  background: #FF26BE;
+}
+
+.line_content .bar {
+  width: 60%;
+  background: #ffffff;
+  height: 5px;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.line_content .line_bar {
+  animation: bar 2.8s;
+  height: 5px;
+  background: #30D3FF;
+  width: 85%;
+}
+
+.line_content .css {
+  width: 70%;
+  background: #FF761B;
+}
+
+.line_content .photo {
+  width: 78%;
+  background: #FF26BE;
+}
+
+@keyframes bar {
+  0% {
+    width: 0%;
+  }
+}
+
+@keyframes write {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    content: "15%";
+  }
+
+  40% {
+    content: "30%";
+  }
+
+  60% {
+    content: "45%";
+  }
+
+  80% {
+    content: "60%";
+  }
+
+  100% {
+    content: "70%";
+  }
+}
+
+/*---------line skills--------*/
+@keyframes circle_animation {
+  0% {
+    stroke-dashoffset: 340px;
+  }
+
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.skill-container {
+  margin-top: 50px;
+}
+
+circle {
+  stroke-width: 5px;
+  stroke: #D593FF;
+  fill: transparent;
+  animation: circle_animation 2s linear backwards;
+}
+
+.skill-container .circle_box:nth-child(2) circle {
+  stroke: #35FC00;
+}
+
+.skill-container .circle_box:nth-child(3) circle {
+  stroke: #FFA726;
+}
+
+.skill-container .circle_box:nth-child(4) circle {
+  stroke: #00A0D2;
+}
+
+circle p {
+  vertical-align: middle;
+  display: table-cell;
+}

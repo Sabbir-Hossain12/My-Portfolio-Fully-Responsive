@@ -7,7 +7,7 @@ window.addEventListener("scroll", function() {
   var scrollThreshold = window.innerHeight * 0.01; // 1vh in pixels
   
   if (window.scrollY > scrollThreshold) {
-    navbar.style.backgroundColor = "#495057"; // Change to your desired color
+    navbar.style.backgroundColor = "#0F161C"; // Change to your desired color
   } else {
     navbar.style.backgroundColor = "transparent";
   }
