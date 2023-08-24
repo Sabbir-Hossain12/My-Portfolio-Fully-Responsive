@@ -61,6 +61,11 @@ p{
   padding:  2rem 0 2rem 0 ;
 }
 
+.margin-contact
+{
+  padding:  2rem 0 10rem 0 ;
+}
+
 /* header */
 .header-bg
 {
@@ -83,7 +88,7 @@ p{
 
 .text-color:hover
 {
-  color: black!important;
+  color: #20C863 !important;
   transition: 0.6s;
 }
 
@@ -161,7 +166,7 @@ p{
 
 .tec-img
 {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   height: 2.8rem;
 }
 
@@ -195,10 +200,7 @@ p{
 
 /* Footer  */
 
-.footerMargin
-{
-  /* margin-top: 10rem; */
-}
+
 footer p
 {
   margin-bottom: 0;

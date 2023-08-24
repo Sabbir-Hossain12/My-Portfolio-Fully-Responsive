@@ -15,31 +15,4 @@ window.addEventListener("scroll", function() {
 
 
 
-$(document).ready (function()
-{
-
-
-
-
- $(".background").fadeIn(2000);
-
-});
-
-
-
-
-$(document).ready(function() {
-  // Add click event handlers to navigation links
-  $('nav a').on('click', function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    const targetSectionId = $(this).attr('href'); // Get the target section's ID
-    const targetSection = $(targetSectionId); // Find the target section element
-    if (targetSection.length) {
-      $('html, body').animate({
-        scrollTop: targetSection.offset().top
-      }, 1000); // Scroll to the target section smoothly over 1000 milliseconds
-    }
-  });
-});
-
 
