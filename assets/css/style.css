@@ -130,9 +130,9 @@ p{
 .me-img
 {
   
-  max-height: 30rem;
-  max-width: 30rem;
-  border: 1.5rem solid white;
+  max-height: 22rem;
+  max-width: 22rem;
+  border: 1rem solid #FAF9F6;
   
 }
 
@@ -140,29 +140,39 @@ p{
 .header
 {
   font-weight:700;
- 
-  color: white;
+  color: #FAF9F6;
   font-size: 9.18rem;
   font-family: 'Big Shoulders Display', cursive;
 
 }
 .header-big
 {
-  margin: 0 0 5rem 0rem;
+  margin: 0 0 5rem 0;
 
 }
 
 
 .subheader
 {
+  background-color: #FAF9F6 ;
   font-family: 'Be Vietnam Pro', sans-serif;
   text-align: start;
   display: inline;
   font-size: 1rem;
-  padding: 1rem;
+  padding: .8rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
   color: #0F161C!important;
+  /*color: white!important;*/
+
+}
+
+.short-des
+{
+  width: 60%;
+  padding: 1rem 0 1rem 0;
+  letter-spacing: 0.1rem
+  /*color: #FAF9F6;*/
 }
 /* technology */
 

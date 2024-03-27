@@ -15,9 +15,9 @@
 .me-img
 {
   
-  max-height: 25rem;
-  max-width: 25rem;
-  border: 1.5rem solid white;
+  max-height: 22rem;
+  max-width: 22rem;
+  border: 1rem solid #FAF9F6;
   
 }
 
@@ -44,9 +44,9 @@
   text-align: start;
   display: inline;
   font-size: 1.2rem;
-  padding: .6rem;
+  padding: .5rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   
 }
 
@@ -74,7 +74,7 @@
   
   max-height: 20rem;
   max-width: 20rem;
-  border: 1rem solid white;
+  border: 1rem solid #FAF9F6;
   
 }
 
@@ -94,9 +94,9 @@
   text-align: start;
   display: inline;
   font-size: 1rem;
-  padding: .6rem;
+  padding: .4rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   
 }
 .header-big
@@ -190,9 +190,9 @@
   text-align: start;
   display: inline;
   font-size: .9rem;
-  padding: .6rem;
+  padding: .4rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   
 }
 .header-big
@@ -231,6 +231,17 @@
   border: .8rem solid white;
   
 }
+  .subheader
+  {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    text-align: start;
+    display: inline;
+    font-size: .9rem;
+    padding: .4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+  }
 
 }
 /* 660px */
@@ -270,6 +281,7 @@
   
   font-size: .7rem;
   padding: .6rem;
+  letter-spacing: 0.1rem;
   
   
 }
@@ -291,9 +303,34 @@
   margin-top: 2rem!important;
 }
 
+.header-big
+{
+  text-align: center;
+  padding: 0 0.7rem 0 0.7rem;
+  /*padding-left: 10%;*/
+}
+.short-des
+{
+  width: 100%;
+  text-align: center;
+}
+.social-icon
+{
+  justify-content: center!important;
+}
+  .me-img
+  {
+
+    max-height: 12rem;
+    max-width: 12rem;
+    border: .8rem solid #FAF9F6;
+
+  }
+
+
 }
 
-@media(max-width:350px)
+@media(max-width:372px)
 {
   .img-banner-pos
   {
@@ -305,9 +342,19 @@
     font-weight:700;
    
     color: white;
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-family: 'Big Shoulders Display', cursive;
   
   }
+  .subheader
+  {
+
+    font-size: .6rem;
+    padding: .6rem;
+    letter-spacing: 0.1rem;
+
+
+  }
+
 
 }
