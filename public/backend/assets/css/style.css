@@ -1,0 +1,17 @@
+.modal-footer {
+    border-top: none;
+}
+.success_badge{
+    color: #fff;
+    background: #5156BE;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+.danger_badge{
+    color: #fff;
+    background: #FD625E;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+}

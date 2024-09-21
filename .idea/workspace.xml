@@ -5,53 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24929adf-88f3-42ce-9cb1-8c6bb630f9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/css/query.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/backend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/cover-min.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/designer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/dp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/Cover/frontend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/Ecommerce-web-with-chatbot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/Online-Blood-Management-System-index-php.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/TechHatch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/jobpulse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/kichen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/note_taking.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/techhatch-pos.great-site.net_dashboard (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/images/project/vat-calculator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/js/fontawesome.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/frontend/assets/js/jquery-3.6.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/My-Portfolio-Fully-Responsive.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/fontawesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/query.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/backend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/cover-min.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/designer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/dp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/Cover/frontend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/Ecommerce-web-with-chatbot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/Online-Blood-Management-System-index-php.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/TechHatch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/jobpulse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/kichen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/note_taking.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/techhatch-pos.great-site.net_dashboard (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/project/vat-calculator.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/fontawesome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/include/skills.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/include/skills.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,27 +150,30 @@
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2m1X8J4Mnq06cBi3R9IHJtgxEq5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "last_opened_file_path": "D:/Projects/my-portfolio-dynamic/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/my-portfolio-dynamic/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\my-portfolio-dynamic\public" />
@@ -221,9 +183,6 @@
     <configuration name="Main" type="PestRunConfigurationType">
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
       <method v="2" />
     </configuration>
@@ -244,10 +203,24 @@
       <option name="presentableId" value="Default" />
       <updated>1726244896146</updated>
       <workItem from="1726244899827" duration="1121000" />
+      <workItem from="1726564830235" duration="632000" />
+      <workItem from="1726566584143" duration="8128000" />
+      <workItem from="1726827456622" duration="10944000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/backend/pages/banners/index.blade.php</url>
+          <line>231</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

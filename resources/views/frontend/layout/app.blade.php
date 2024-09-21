@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Sabbir</title>
+    <meta name="description" content="Experienced Laravel developer specializing in building scalable web applications. Explore my portfolio to see projects that showcase my skills in PHP, Laravel, and full-stack web development.">
+    <meta name="keywords" content="web development, portfolio, laravel,php, javascript, HTML, CSS, JQuery,AJax, Bootstrap ">
+    <meta name="author" content="Sabbir Hossain">
+{{--  Open Graph (for Social media)  --}}
+    <meta property="og:title" content="Sabbir Hossain - Portfolio">
+    <meta property="og:description" content="Professional Laravel developer with expertise in crafting dynamic and scalable web solutions. Check out my portfolio for examples of my work in modern web development and backend solutions.">
+    <meta property="og:image" content="{{asset('frontend/assets/images/Cover/cover-min.jpg')}}">
+    <meta property="og:url" content="https://dev-sabbir.com">
+    <meta property="og:type" content="website">
 
+    <link rel="canonical" href="https://dev-sabbir.com">
+    <title>Sabbir</title>
     <!-- JQuery -->
     <script src=" {{asset('frontend')}}/assets/js/jquery-3.6.0.min.js"></script>
 
