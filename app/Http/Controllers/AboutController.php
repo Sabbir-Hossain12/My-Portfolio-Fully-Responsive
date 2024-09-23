@@ -12,7 +12,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $abouts = About::first();
+        return view('backend.pages.abouts.index', compact('abouts'));
     }
 
     /**
@@ -28,7 +29,23 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $about = new About();
+        $about->title = $request->title;
+        $about->designation = $request->designation;
+        $about->short_desc = $request->short_desc;
+
+
+        if ($request->hasFile('cover_img')) {
+            $cover_img = $request->file('cover_img');
+            $filename = time().'.'.$cover_img->getClientOriginalExtension();
+            $location = public_path('frontend/uploads/about/');
+            $cover_img->move($location, $filename);
+            $about->cover_img = 'frontend/uploads/about/'.$filename;
+        }
+        $about->save();
+
+
+        return redirect()->back()->with('success', 'About created successfully');
     }
 
     /**
@@ -52,7 +69,25 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $about->title = $request->title;
+        $about->designation = $request->designation;
+        $about->short_desc = $request->short_desc;
+
+
+        if ($request->hasFile('cover_img')) {
+            if ($about->cover_img && file_exists($about->cover_img)) {
+                unlink(public_path($about->cover_img));
+            }
+            $cover_img = $request->file('cover_img');
+            $filename = time().'.'.$cover_img->getClientOriginalExtension();
+            $location = public_path('frontend/uploads/about/');
+            $cover_img->move($location, $filename);
+            $about->cover_img = 'frontend/uploads/about/'.$filename;
+        }
+        $about->save();
+
+
+        return redirect()->back()->with('success', 'About Updated successfully');
     }
 
     /**

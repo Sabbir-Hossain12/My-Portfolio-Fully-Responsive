@@ -12,7 +12,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view('backend.pages.services.index', compact('services'));
     }
 
     /**
@@ -28,7 +29,20 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service = new Service();
+        $service->title = $request->title;
+        $service->desc = $request->desc;
+     
+        if ($request->hasFile('image')) {
+
+            $serviceImg = $request->file('image');
+            $filename = time() . '.' . $serviceImg->getClientOriginalExtension();
+            $location = public_path('frontend/uploads/service/');
+            $serviceImg->move($location, $filename);
+            $service->service_icon = 'frontend/uploads/service/' . $filename;
+        }
+        $service->save();
+        return redirect()->back()->with('success', 'Service created successfully');
     }
 
     /**
@@ -52,7 +66,24 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+       
+        $service->title = $request->title;
+        $service->desc = $request->desc;
+
+        if ($request->hasFile('image')) {
+            
+            if ( $service->service_icon &&  file_exists($service->service_icon)) {
+                unlink(public_path($service->service_icon));
+            }
+
+            $serviceImg = $request->file('image');
+            $filename = time() . '.' . $serviceImg->getClientOriginalExtension();
+            $location = public_path('frontend/uploads/service/');
+            $serviceImg->move($location, $filename);
+            $service->service_icon = 'frontend/uploads/service/' . $filename;
+        }
+        $service->save();
+        return redirect()->back()->with('success', 'Service created successfully');
     }
 
     /**
@@ -60,6 +91,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back()->with('success', 'Service deleted successfully');
     }
 }

@@ -30,9 +30,33 @@ class BannerController extends Controller
     public function store(Request $request)
     {
         
+        $banner= new Banner();
+        $banner->name= $request->name;
+        $banner->designation= $request->designation;
+        $banner->short_desc= $request->short_desc;
         
-//        $banner = new Banner();
-//        $banner->
+        if ($request->hasFile('background_img'))
+        {
+            $bannerImg=$request->file('background_img');
+            $filename=time().'.'.$bannerImg->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/banner/');
+            $bannerImg->move($location,$filename);
+            $banner->background_img='frontend/uploads/banner/'.$filename;
+        }
+        
+        if ($request->hasFile('profile_img'))
+        {
+            $bannerImg=$request->file('profile_img');
+            $filename=time().'.'.$bannerImg->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/banner/');
+            $bannerImg->move($location,$filename);
+            $banner->profile_img='frontend/uploads/banner/'.$filename;
+        }
+        
+        $banner->save();
+        
+        return redirect()->back()->with('success','Banner created successfully');
+
     }
 
     /**
@@ -56,7 +80,38 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        //
+        
+        $banner->name= $request->name;
+        $banner->designation= $request->designation;
+        $banner->short_desc= $request->short_desc;
+
+        if ($request->hasFile('background_img'))
+        {
+            if ($banner->background_img &&  file_exists($banner->background_img)) {
+                unlink(public_path($banner->background_img) );
+            }
+            $bannerImg=$request->file('background_img');
+            $filename=time().'.'.$bannerImg->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/banner/');
+            $bannerImg->move($location,$filename);
+            $banner->background_img='frontend/uploads/banner/'.$filename;
+        }
+
+        if ($request->hasFile('profile_img'))
+        {
+            if ($banner->profile_img &&  file_exists($banner->profile_img)) {
+                unlink(public_path($banner->profile_img) );
+            }   
+            $bannerImg=$request->file('profile_img');
+            $filename=time().'.'.$bannerImg->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/banner/');
+            $bannerImg->move($location,$filename);
+            $banner->profile_img='frontend/uploads/banner/'.$filename;
+        }
+
+        $banner->save();
+
+        return redirect()->back()->with('success','Banner created successfully');
     }
 
     /**

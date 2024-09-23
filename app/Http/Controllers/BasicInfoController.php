@@ -28,7 +28,28 @@ class BasicInfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $basicInfo = new BasicInfo();
+        $basicInfo->university = $request->university;
+        $basicInfo->degree = $request->degree;
+        $basicInfo->passed_year = $request->passed_year;
+        $basicInfo->address = $request->address;
+        $basicInfo->email = $request->email;
+        $basicInfo->phone = $request->phone;
+        $basicInfo->age = $request->age;
+        
+        
+        if ($request->hasFile('logo')) {
+            
+            $logo=$request->file('logo');
+            $filename=time().'.'.$logo->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/logo/');
+            $logo->move($location,$filename);
+            $basicInfo->logo='frontend/uploads/logo/'.$filename;
+        }
+        $basicInfo->save();
+        
+        
+        return redirect()->back()->with('success', 'Basic info created successfully');
     }
 
     /**
@@ -52,7 +73,32 @@ class BasicInfoController extends Controller
      */
     public function update(Request $request, BasicInfo $basicInfo)
     {
-        //
+       
+        $basicInfo->university = $request->university;
+        $basicInfo->degree = $request->degree;
+        $basicInfo->passed_year = $request->passed_year;
+        $basicInfo->address = $request->address;
+        $basicInfo->email = $request->email;
+        $basicInfo->phone = $request->phone;
+        $basicInfo->age = $request->age;
+
+
+        if ($request->hasFile('logo')) {
+            
+            if ($basicInfo->logo && file_exists($basicInfo->logo)) {
+                unlink(public_path($basicInfo->logo));
+            }
+
+            $logo=$request->file('logo');
+            $filename=time().'.'.$logo->getClientOriginalExtension();
+            $location=public_path('frontend/uploads/logo/');
+            $logo->move($location,$filename);
+            $basicInfo->logo='frontend/uploads/logo/'.$filename;
+        }
+        $basicInfo->save();
+
+
+        return redirect()->back()->with('success', 'Basic info created successfully');
     }
 
     /**

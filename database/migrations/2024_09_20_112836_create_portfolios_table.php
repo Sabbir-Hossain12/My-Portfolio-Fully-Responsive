@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('portfolio_long_desc')->nullable();
             $table->string('portfolio_link');
             $table->string('portfolio_btn_text');
+            $table->integer('sequence')->default(0);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

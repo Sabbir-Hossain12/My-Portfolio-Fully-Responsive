@@ -32,23 +32,26 @@ class PortfolioController extends Controller
     {
         
         $portfolio = new Portfolio();
-        $portfolio->title = $request->title;
+        $portfolio->portfolio_title = $request->portfolio_title;
         $portfolio->portfolio_short_desc = $request->portfolio_short_desc;
         $portfolio->portfolio_long_desc = $request->portfolio_long_desc;
         $portfolio->portfolio_link = $request->portfolio_link;
         $portfolio->portfolio_btn_text = $request->portfolio_btn_text;
-        $portfolio->status = $request->status;
+        $portfolio->portfolio_sequence = $request->portfolio_sequence;
+        
         
         if ($request->hasFile('portfolio_image')) {
             
             $portImg=$request->file('portfolio_image');
             $filename=time().'.'.$portImg->getClientOriginalExtension();
-            $location=public_path('frontend/uploads/portfolio'.$filename);
+            $location=public_path('frontend/uploads/portfolio/');
             $portImg->move($location,$filename);
-            $portfolio->portfolio_image='frontend/uploads/portfolio'.$filename;
+            $portfolio->portfolio_image='frontend/uploads/portfolio/'.$filename;
         }
         
         $portfolio->save();
+        
+        return redirect()->back()->with('success','Portfolio created successfully');
     }
 
     /**
@@ -73,13 +76,13 @@ class PortfolioController extends Controller
     public function update(Request $request, Portfolio $portfolio)
     {
        
-        $portfolio->title = $request->title;
+        $portfolio->portfolio_title = $request->portfolio_title;
         $portfolio->portfolio_short_desc = $request->portfolio_short_desc;
         $portfolio->portfolio_long_desc = $request->portfolio_long_desc;
         $portfolio->portfolio_link = $request->portfolio_link;
         $portfolio->portfolio_btn_text = $request->portfolio_btn_text;
-        $portfolio->status = $request->status;
-
+        $portfolio->portfolio_sequence = $request->portfolio_sequence;
+       
         if ($request->hasFile('portfolio_image')) {
             
             if ($portfolio->portfolio_image &&  file_exists($portfolio->portfolio_image)) {
@@ -88,12 +91,15 @@ class PortfolioController extends Controller
 
             $portImg=$request->file('portfolio_image');
             $filename=time().'.'.$portImg->getClientOriginalExtension();
-            $location=public_path('frontend/uploads/portfolio'.$filename);
+            $location=public_path('frontend/uploads/portfolio/');
             $portImg->move($location,$filename);
-            $portfolio->portfolio_image='frontend/uploads/portfolio'.$filename;
+            $portfolio->portfolio_image='frontend/uploads/portfolio/'.$filename;
         }
 
         $portfolio->save();
+
+        return redirect()->back()->with('success','Portfolio created successfully');
+
     }
 
     /**
