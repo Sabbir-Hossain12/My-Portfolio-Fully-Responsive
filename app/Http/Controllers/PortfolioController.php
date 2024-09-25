@@ -107,6 +107,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
+//        dd($portfolio);
         $portfolio->delete();
         
         return redirect()->back();

@@ -27,9 +27,9 @@
                         </div>
                         <div class="card-body">
 
-                            <h4 class="card-title mb-3 text-decoration-none">
+                            <h5 class="card-title mb-3 text-decoration-none">
                                 {{$item->portfolio_title}}
-                            </h4>
+                            </h5>
                             <p>{{$item->portfolio_short_desc}}</p>
 
                             <a href="{{$item->portfolio_link}}" target="_blank"

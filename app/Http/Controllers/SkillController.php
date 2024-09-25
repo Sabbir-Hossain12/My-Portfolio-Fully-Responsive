@@ -12,7 +12,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.pages.skills.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -28,7 +28,13 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $skill=new Skill();
+        $skill->skill_title=$request->skill_title;
+        $skill->skill_desc=$request->skill_desc;
+        $skill->save();
+        
+        
+        return redirect()->back()->with('success','Skill created successfully');
     }
 
     /**
@@ -52,7 +58,13 @@ class SkillController extends Controller
      */
     public function update(Request $request, Skill $skill)
     {
-        //
+       
+        $skill->skill_title=$request->skill_title;
+        $skill->skill_desc=$request->skill_desc;
+        $skill->save();
+
+
+        return redirect()->back()->with('success','Skill updated successfully');
     }
 
     /**
@@ -60,6 +72,7 @@ class SkillController extends Controller
      */
     public function destroy(Skill $skill)
     {
-        //
+        $skill->delete();
+        return redirect()->back()->with('success','Skill deleted successfully');
     }
 }

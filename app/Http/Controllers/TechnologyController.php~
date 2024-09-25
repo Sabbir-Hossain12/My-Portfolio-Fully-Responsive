@@ -29,11 +29,9 @@ class TechnologyController extends Controller
     public function store(Request $request)
     {
         $technology=new Technology();
-        $technology->technology_title=$request->technology_title;
+        $technology->technology_icon=$request->technology_icon;
         $technology->technology_icon=$request->technology_icon;
         
-        
-        return redirect()->back()->with('success', 'Technology created successfully');
     }
 
     /**
@@ -57,12 +55,7 @@ class TechnologyController extends Controller
      */
     public function update(Request $request, Technology $technology)
     {
-      
-        $technology->technology_title=$request->technology_title;
-        $technology->technology_icon=$request->technology_icon;
-
-
-        return redirect()->back()->with('success', 'Technology Updated successfully');
+        //
     }
 
     /**
@@ -70,7 +63,6 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        $technology->delete();
-        return redirect()->back()->with('success', 'Technology deleted successfully');
+        //
     }
 }

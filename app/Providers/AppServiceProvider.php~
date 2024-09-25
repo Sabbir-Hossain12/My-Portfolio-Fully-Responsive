@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('frontend.include.portfolio', function ($view) {
            
             $portfolios= Portfolio::where('status', 1)
-                ->select('portfolio_title', 'portfolio_image','portfolio_link','portfolio_btn_text','portfolio_short_desc')
+                ->select('portfolio_title', 'portfolio_image','portfolio_link','portfolio_btn_text')
                 ->orderBy('portfolio_sequence', 'asc')
                 ->get();
             $view->with('portfolios', $portfolios);
