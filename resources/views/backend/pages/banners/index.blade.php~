@@ -47,7 +47,7 @@
                         <label for="banner_type" class="col-form-label">Background Image</label>
                         <input type="file" class="form-control" name="background_img" id="background_img">
                        
-                        <img class="mt-2" src="{{$banners && $banners->background_img ? asset($banners->background_img) : 'https://via.placeholder.com/150' }}" alt="" id="background_img_preview" width="50" height="50">
+                        <img class="mt-2" src="{{$banners && $banners->background_img ? asset($banners->profile_img) : 'https://via.placeholder.com/150' }}" alt="" id="background_img_preview" width="50" height="50">
                         
                     </div>
 

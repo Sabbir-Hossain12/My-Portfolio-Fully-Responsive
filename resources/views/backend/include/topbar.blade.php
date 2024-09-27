@@ -172,7 +172,7 @@
                     <!-- item-->
                     <a class="dropdown-item" href=""><i class="fa-solid fa-user  font-size-16 align-middle me-1"></i> Profile</a>
                     <div class="dropdown-divider"></div>
-                    <form method="post" action="">
+                    <form method="post" action="{{route('logout')}}">
                         @csrf
                     <button type="submit" class="dropdown-item" ><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</button>
                     </form>

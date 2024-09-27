@@ -15,12 +15,12 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0 font-size-18">Banners</h4>
+                <h4 class="mb-sm-0 font-size-18">Abouts</h4>
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                        <li class="breadcrumb-item active">banners</li>
+                        <li class="breadcrumb-item active">Abouts</li>
                     </ol>
                 </div>
 
@@ -32,46 +32,39 @@
 
 
 
- 
 
-    @if(!$banners)
-        <form method="post" action="{{route('admin.banner.store')}}" enctype="multipart/form-data">
-     @else
-        <form method="post" action="{{route('admin.banner.update',$banners->id)}}" enctype="multipart/form-data">
+
+    @if(!$abouts)
+        <form method="post" action="{{route('admin.about.store')}}" enctype="multipart/form-data">
+            @else
+                <form method="post" action="{{route('admin.about.update',$abouts->id)}}" enctype="multipart/form-data">
                     @method('PUT')
-    @endif
-                    
+                    @endif
+
                     @csrf
 
                     <div class="mb-3">
-                        <label for="banner_type" class="col-form-label">Background Image</label>
-                        <input type="file" class="form-control" name="background_img" id="background_img">
-                       
-                        <img class="mt-2" src="{{$banners && $banners->background_img ? asset($banners->background_img) : 'https://via.placeholder.com/150' }}" alt="" id="background_img_preview" width="50" height="50">
-                        
+                        <label for="cover_img" class="col-form-label">Cover Image</label>
+                        <input type="file" class="form-control" name="cover_img" id="cover_img">
+
+                        <img class="mt-2" src="{{$abouts && $abouts->cover_img ? asset($abouts->cover_img) : 'https://via.placeholder.com/150' }}" alt="" id="background_img_preview" width="50" height="50">
+
                     </div>
+                    
 
                     <div class="mb-3">
-                        <label for="banner_type" class="col-form-label">Profile Image</label>
-                        <input type="file" class="form-control" name="profile_img" id="profile_img">
-                       
-                        <img class="mt-2" src="{{$banners && $banners->background_img ? asset($banners->profile_img) :'https://via.placeholder.com/150'}}" alt="" id="profile_img_preview" width="50" height="50">
-                       
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="name" class="col-form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{$banners->name ?? ''}}">
+                        <label for="title" class="col-form-label">Title</label>
+                        <input type="text" class="form-control" name="title" id="title" value="{{$abouts->title ?? ''}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="designation" class="col-form-label">Designation</label>
-                        <input type="text" class="form-control" name="designation" id="designation" value="{{$banners->designation ?? ''}}">
+                        <input type="text" class="form-control" name="designation" id="designation" value="{{$abouts->designation ?? ''}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="short_desc" class="col-form-label">Short Description</label>
-                        <textarea type="text" class="form-control" name="short_desc" id="short_desc">{{$banners->short_desc ?? ''}}</textarea>
+                        <textarea type="text" class="form-control" name="short_desc" id="short_desc">{{$abouts->short_desc ?? ''}}</textarea>
                     </div>
 
                     <div class="modal-footer">

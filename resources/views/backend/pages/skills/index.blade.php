@@ -1,0 +1,224 @@
+@extends('backend.layout.master')
+
+@push('backendCss')
+    {{--    <meta name="csrf_token" content="{{ csrf_token() }}" />--}}
+
+    <link href="{{asset('public/backend')}}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="{{asset('public/backend')}}/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
+          rel="stylesheet" type="text/css">
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+{{--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
+   
+
+@endpush
+
+@section('contents')
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">skills</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                        <li class="breadcrumb-item active">skills</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{-- Table Starts--}}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Skill List</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createSkillModal">
+                            Add Skill
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table mb-0  nowrap w-100 dataTable no-footer dtr-inline" id="SkillTable">
+                            <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Skill Title</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            @forelse($skills as $skill)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                   
+                                    <td>{{$skill->skill_title}}</td>
+                                    
+                                    <td>
+                                        @if($skill->status==1)
+                                            <button class="btn btn-info">Active</button>
+                                        @else
+
+                                            <button class="btn btn-danger">Inactive</button>
+
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#editSkillModal{{$skill->id}}">Edit
+                                        </button>
+                                        <button form="deleteSkill{{$skill->id}}" class="btn btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#deleteSkillModal{{$skill->id}}">Delete
+                                        </button>
+                                        <form id="deleteSkill{{$skill->id}}"
+                                              action="{{route('admin.skill.destroy', $skill->id)}}"
+                                              method="post">
+                                            @csrf
+                                            @method('DELETE')
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                {{--    Edit Skill Modal--}}
+                                <div class="modal fade" id="editSkillModal{{$skill->id}}" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel"
+                                     style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Admin</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post"
+                                                      action="{{route('admin.skill.update',$skill->id)}}">
+                                                    @csrf
+                                                    @method('PUT')
+
+                                                 
+
+                                                   
+                                                    <div class="mb-3">
+                                                        <label for="email" class="col-form-label">Skill
+                                                            Title</label>
+                                                        <input type="text" class="form-control"
+                                                               value="{{$skill->skill_title}}"
+                                                               name="skill_title">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="portfolio_short_desc" class="col-form-label">Skill
+                                                            Short Description</label>
+                                                        <textarea id="up_skill_desc{{$skill->id}}" class="form-control"
+                                                                  name="skill_desc">{{$skill->skill_desc}} </textarea>
+
+                                                    </div>
+                                                    
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- end card body -->
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end col -->
+    </div>
+
+    {{--    Table Ends--}}
+
+    {{--    Create Skill Modal--}}
+    <div class="modal fade" id="createSkillModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Skill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="form" id="createSkill" method="post" action="{{route('admin.skill.store')}}"
+                          enctype="multipart/form-data">
+                        @csrf
+
+                      
+
+                       
+
+                       
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Skill Title</label>
+                            <input type="text" class="form-control" name="skill_title">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="skill_desc" class="col-form-label">Skill Description</label>
+                            <textarea id="skill_desc" class="form-control"
+                                      name="skill_desc" > </textarea>
+                          
+
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@push('backendJs')
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{asset('public/backend')}}/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('public/backend')}}/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#skill_desc').summernote();
+
+            @foreach($skills as $skill)
+            $('#up_skill_desc{{$skill->id}}').summernote();
+            @endforeach
+            
+        });
+    </script>
+
+@endpush
