@@ -1,0 +1,226 @@
+@extends('backend.layout.master')
+
+@push('backendCss')
+    {{--    <meta name="csrf_token" content="{{ csrf_token() }}" />--}}
+
+    <link href="{{asset('public/backend')}}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+          rel="stylesheet" type="text/css">
+    <link href="{{asset('public/backend')}}/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
+          rel="stylesheet" type="text/css">
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    {{--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
+
+
+@endpush
+
+@section('contents')
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">services</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                        <li class="breadcrumb-item active">services</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{-- Table Starts--}}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Service List</h4>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createServiceModal">
+                            Add Service
+                        </button>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table mb-0  nowrap w-100 dataTable no-footer dtr-inline" id="ServiceTable">
+                            <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Service Icon</th>
+                                <th>Service Title</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            @forelse($services as $service)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+
+                                    <td>
+                                        <img class="rounded" src="{{asset($service->service_icon)}}" alt=""
+                                             width="50" height="50">
+                                    </td>
+
+                                    <td>{{$service->title}}</td>
+
+                                    <td>
+                                        @if($service->status==1)
+                                            <button class="btn btn-info">Active</button>
+                                        @else
+
+                                            <button class="btn btn-danger">Inactive</button>
+
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#editServiceModal{{$service->id}}">Edit
+                                        </button>
+                                        <button form="deleteService{{$service->id}}" class="btn btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#deleteServiceModal{{$service->id}}">Delete
+                                        </button>
+                                        <form id="deleteService{{$service->id}}"
+                                              action="{{route('admin.service.destroy', $service->id)}}"
+                                              method="post">
+                                            @csrf
+                                            @method('DELETE')
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                {{--    Edit Service Modal--}}
+                                <div class="modal fade" id="editServiceModal{{$service->id}}" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel"
+                                     style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Admin</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post"
+                                                      action="{{route('admin.service.update',$service->id)}}">
+                                                    @csrf
+                                                    @method('PUT')
+
+                                                    <div class="mb-3">
+                                                        <label for="email" class="col-form-label">Service
+                                                            Title</label>
+                                                        <input type="text" class="form-control"
+                                                               value="{{$service->title}}"
+                                                               name="title">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="portfolio_short_desc" class="col-form-label">Service Description</label>
+                                                        <textarea id="up_service_desc{{$service->id}}" class="form-control"
+                                                                  name="desc">{{$service->service_desc}} {{$service->desc}}</textarea>
+
+                                                    </div>
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- end card body -->
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end col -->
+    </div>
+
+    {{--    Table Ends--}}
+
+    {{--    Create Service Modal--}}
+    <div class="modal fade" id="createServiceModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form name="form" id="createService" method="post" action="{{route('admin.service.store')}}"
+                          enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Service Icon</label>
+                            <input type="file" class="form-control" name="service_icon">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Service Title</label>
+                            <input type="text" class="form-control" name="title">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="service_desc" class="col-form-label">Service Description</label>
+                            <textarea id="service_desc" class="form-control"
+                                      name="desc" > </textarea>
+
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@push('backendJs')
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{asset('public/backend')}}/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('public/backend')}}/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+{{--    <script>--}}
+{{--        $(document).ready(function() {--}}
+{{--            $('#service_desc').summernote();--}}
+
+{{--            @foreach($services as $service)--}}
+{{--            $('#up_service_desc{{$service->id}}').summernote();--}}
+{{--            @endforeach--}}
+
+{{--        });--}}
+{{--    </script>--}}
+
+@endpush

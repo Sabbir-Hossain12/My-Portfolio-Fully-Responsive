@@ -33,9 +33,9 @@ class ServiceController extends Controller
         $service->title = $request->title;
         $service->desc = $request->desc;
      
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('service_icon')) {
 
-            $serviceImg = $request->file('image');
+            $serviceImg = $request->file('service_icon');
             $filename = time() . '.' . $serviceImg->getClientOriginalExtension();
             $location = public_path('frontend/uploads/service/');
             $serviceImg->move($location, $filename);

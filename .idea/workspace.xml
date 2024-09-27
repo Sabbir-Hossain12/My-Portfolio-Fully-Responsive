@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24929adf-88f3-42ce-9cb1-8c6bb630f9d2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BannerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BannerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SkillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SkillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/include/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/include/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/include/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/include/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/pages/banners/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/pages/banners/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/partials/delete-user-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/partials/update-password-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/partials/update-profile-information-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +210,7 @@
       <workItem from="1727035925645" duration="2085000" />
       <workItem from="1727077983240" duration="5819000" />
       <workItem from="1727287463293" duration="3223000" />
-      <workItem from="1727452338541" duration="7651000" />
+      <workItem from="1727452338541" duration="8619000" />
     </task>
     <servers />
   </component>
