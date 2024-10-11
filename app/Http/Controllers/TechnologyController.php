@@ -12,7 +12,8 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.technologies.index');
+        $technologies=Technology::all();
+        return view('backend.pages.technologies.index',compact('technologies'));
     }
 
     /**
@@ -31,7 +32,7 @@ class TechnologyController extends Controller
         $technology=new Technology();
         $technology->technology_title=$request->technology_title;
         $technology->technology_icon=$request->technology_icon;
-        
+        $technology->save();
         
         return redirect()->back()->with('success', 'Technology created successfully');
     }
@@ -60,7 +61,8 @@ class TechnologyController extends Controller
       
         $technology->technology_title=$request->technology_title;
         $technology->technology_icon=$request->technology_icon;
-
+        
+        $technology->save();
 
         return redirect()->back()->with('success', 'Technology Updated successfully');
     }

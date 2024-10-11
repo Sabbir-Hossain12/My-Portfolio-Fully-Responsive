@@ -66,17 +66,18 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+//        dd($request->all());
        
         $service->title = $request->title;
         $service->desc = $request->desc;
 
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('service_icon')) {
             
-            if ( $service->service_icon &&  file_exists($service->service_icon)) {
+            if ( $service->service_icon &&  file_exists(public_path($service->service_icon))) {
                 unlink(public_path($service->service_icon));
             }
 
-            $serviceImg = $request->file('image');
+            $serviceImg = $request->file('service_icon');
             $filename = time() . '.' . $serviceImg->getClientOriginalExtension();
             $location = public_path('frontend/uploads/service/');
             $serviceImg->move($location, $filename);

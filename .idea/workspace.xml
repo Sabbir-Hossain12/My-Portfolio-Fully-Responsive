@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="24929adf-88f3-42ce-9cb1-8c6bb630f9d2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TechnologyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TechnologyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/include/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/include/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/include/technology.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/include/technology.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +215,8 @@
       <workItem from="1727035925645" duration="2085000" />
       <workItem from="1727077983240" duration="5819000" />
       <workItem from="1727287463293" duration="3223000" />
-      <workItem from="1727452338541" duration="8619000" />
+      <workItem from="1727452338541" duration="8788000" />
+      <workItem from="1728673509119" duration="4166000" />
     </task>
     <servers />
   </component>
@@ -229,6 +235,10 @@
           <url>file://$PROJECT_DIR$/resources/views/backend/pages/portfolio/index.blade.php</url>
           <line>99</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/admin.php</url>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

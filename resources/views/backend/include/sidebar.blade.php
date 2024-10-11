@@ -28,7 +28,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-image"></i>
                         <span data-key="t-apps">Banner</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -45,7 +45,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-briefcase"></i>
                         <span data-key="t-apps">Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -65,7 +65,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-info"></i>
                         <span data-key="t-apps">About</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -81,7 +81,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-gift"></i>
                         <span data-key="t-apps">Skills</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -97,7 +97,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-tools"></i>
                         <span data-key="t-apps">Service</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -113,7 +113,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-solid fa-toolbox"></i>
                         <span data-key="t-apps">Technology</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
