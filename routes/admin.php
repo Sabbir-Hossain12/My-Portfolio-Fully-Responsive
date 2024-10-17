@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Backend\DashboardController;
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BasicInfoController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -31,4 +32,6 @@ Route::name('admin.')->middleware(['auth', 'verified'])->prefix('admin')->group(
     Route::resource('/portfolios', PortfolioController::class)->names('portfolio');
     //______ Contact _____//
     Route::resource('/contacts', ContactController::class)->names('contact');
+    //______Basic Info_____//
+    Route::resource('/basicinfos', BasicInfoController::class)->names('basicinfo');
 });

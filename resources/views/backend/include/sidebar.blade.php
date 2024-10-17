@@ -20,7 +20,7 @@
                 <li class="menu-title" data-key="t-menu">Menu</li>
 
                 <li class="">
-                    <a href="">
+                    <a href="{{route('admin.dashboard.index')}}">
                         <i class="fa-solid fa-home"></i>
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
@@ -129,14 +129,14 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i class="fa-solid fa-user-secret"></i>
-                        <span data-key="t-apps">Banner</span>
+                        <i class="fa-solid fa-wrench"></i>
+                        <span data-key="t-apps">Site Setting</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
 
                         <li>
-                            <a href="{{route('admin.banner.index')}}">
-                                <span data-key="t-calendar">Manage Banner</span>
+                            <a href="{{route('admin.basicinfo.index')}}">
+                                <span data-key="t-calendar">Basic Info</span>
                             </a>
                         </li>
 

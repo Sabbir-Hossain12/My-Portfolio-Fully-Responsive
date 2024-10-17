@@ -12,7 +12,8 @@ class BasicInfoController extends Controller
      */
     public function index()
     {
-        //
+        $basicInfo=BasicInfo::first();
+        return view('backend.pages.basicInfo.index',compact('basicInfo'));
     }
 
     /**
@@ -28,6 +29,7 @@ class BasicInfoController extends Controller
      */
     public function store(Request $request)
     {
+        
         $basicInfo = new BasicInfo();
         $basicInfo->university = $request->university;
         $basicInfo->degree = $request->degree;
@@ -36,7 +38,7 @@ class BasicInfoController extends Controller
         $basicInfo->email = $request->email;
         $basicInfo->phone = $request->phone;
         $basicInfo->age = $request->age;
-        
+        $basicInfo->cv_link = $request->cv_link;
         
         if ($request->hasFile('logo')) {
             
@@ -51,6 +53,7 @@ class BasicInfoController extends Controller
         
         return redirect()->back()->with('success', 'Basic info created successfully');
     }
+    
 
     /**
      * Display the specified resource.
@@ -73,7 +76,8 @@ class BasicInfoController extends Controller
      */
     public function update(Request $request, BasicInfo $basicInfo)
     {
-       
+//        dd($request->all());
+        $basicInfo= BasicInfo::first();
         $basicInfo->university = $request->university;
         $basicInfo->degree = $request->degree;
         $basicInfo->passed_year = $request->passed_year;
@@ -81,6 +85,7 @@ class BasicInfoController extends Controller
         $basicInfo->email = $request->email;
         $basicInfo->phone = $request->phone;
         $basicInfo->age = $request->age;
+        $basicInfo->cv_link = $request->cv_link;
 
 
         if ($request->hasFile('logo')) {
@@ -95,10 +100,10 @@ class BasicInfoController extends Controller
             $logo->move($location,$filename);
             $basicInfo->logo='frontend/uploads/logo/'.$filename;
         }
-        $basicInfo->save();
+        $basicInfo->update();
 
 
-        return redirect()->back()->with('success', 'Basic info created successfully');
+        return redirect()->back()->with('success', 'Basic info Updated successfully');
     }
 
     /**
