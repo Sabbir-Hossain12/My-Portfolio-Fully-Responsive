@@ -30,8 +30,7 @@ Route::name('admin.')->middleware(['auth', 'verified'])->prefix('admin')->group(
     Route::resource('/technologies', TechnologyController::class)->names('technology');
     //______ Portfolio _____//
     Route::resource('/portfolios', PortfolioController::class)->names('portfolio');
-    //______ Contact _____//
-    Route::resource('/contacts', ContactController::class)->names('contact');
+    
     //______Basic Info_____//
     Route::resource('/basicinfos', BasicInfoController::class)->names('basicinfo');
 });

@@ -25,23 +25,19 @@
     <link href=" {{asset('frontend')}}/assets/css/style.css" rel="stylesheet"/>
     <link href=" {{asset('frontend')}}/assets/css/query.css" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
-    <link
-            href=" {{asset('frontend')}}/assets/css/bootstrap.min.css"
-            rel="stylesheet"
-    />
+    <link href=" {{asset('frontend')}}/assets/css/bootstrap.min.css"
+            rel="stylesheet"/>
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Open+Sans:ital,wght@0,500;0,600;1,400;1,600&display=swap"
-            rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Open+Sans:ital,wght@0,500;0,600;1,400;1,600&display=swap"
+            rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;1,400;1,600&display=swap"
-            rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+    
+    <!-- toastr css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -73,6 +69,8 @@
 <!-- fontAwesome  -->
 
 <script src="https://kit.fontawesome.com/e5bc425e91.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{!! Toastr::message() !!}
 </body>
 
 

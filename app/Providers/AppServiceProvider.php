@@ -47,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('frontend.include.skills', function ($view) {
 
-            $skills= Skill::select('skill_title','skill_desc')->first();
+            $skills= Skill::select('skill_title','skill_desc')->get();
 
             $view->with('skills', $skills);
         });
@@ -55,18 +55,21 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('frontend.include.technology', function ($view) {
 
-            $technologies= Technology::select('technology_title','technology_icon')->first();
+            $technologies= Technology::select('technology_title','technology_icon')->get();
 
             $view->with('technologies', $technologies);
         });
 
-        view()->composer('backend.pages.portfolio.service', function ($view) {
+        view()->composer('frontend.include.service', function ($view) {
 
-            $services= Service::where('status', 1)->select('service_icon','title','desc')->first();
+            $services= Service::where('status', 1)->select('service_icon','title','desc')->get();
 
+           
             $view->with('services', $services);
         });
-        
+
+
+    
         
         view()->composer('frontend.include.portfolio', function ($view) {
            

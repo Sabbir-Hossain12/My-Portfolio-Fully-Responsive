@@ -13,23 +13,14 @@
         <div class="row justify-content-center">
             <!--Grid column-->
             <div class="col-md-6 mb-md-0 mb-5">
-                <form
-                        id="contact-form"
-                        name="contact-form"
-                        action=""
-                        method="POST"
-                >
+                <form id="contact-form" name="contact-form" action="{{route('contact.store')}}" method="POST">
+                    @csrf
                     <!--Grid row-->
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <!--Grid column-->
                         <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        class="form-control"
-                                />
+                            <div class="md-form mb-2">
+                                <input type="text" id="name" name="name" class="form-control" required/>
                                 <label for="name" class="">Your name</label>
                             </div>
                         </div>
@@ -38,12 +29,7 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input
-                                        type="text"
-                                        id="email"
-                                        name="email"
-                                        class="form-control"
-                                />
+                                <input type="text" id="email" name="email" class="form-control" required  />
                                 <label for="email" class="">Your email</label>
                             </div>
                         </div>
@@ -52,15 +38,10 @@
                     <!--Grid row-->
 
                     <!--Grid row-->
-                    <div class="row mb-4">
+                    <div class="row mb-2">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                                <input
-                                        type="text"
-                                        id="subject"
-                                        name="subject"
-                                        class="form-control"
-                                />
+                                <input type="text" id="subject" name="subject" class="form-control" required/>
                                 <label for="subject" class="">Subject</label>
                             </div>
                         </div>
@@ -72,27 +53,19 @@
                         <!--Grid column-->
                         <div class="col-md-12">
                             <div class="md-form">
-                      <textarea
-                              type="text"
-                              id="message"
-                              name="message"
-                              rows="2"
-                              class="form-control md-textarea"
-                      ></textarea>
+                                <textarea type="text" id="message" name="message" rows="2"
+                                          class="form-control md-textarea" required></textarea>
                                 <label for="message">Your message</label>
                             </div>
                         </div>
                     </div>
                     <!--Grid row-->
-                </form>
+               
 
-                <div class="text-center text-md-left">
-                    <a
-                            class="btn btn-success btn-lg"
-
-                    >Send</a
-                    >
+                <div class="d-grid mt-3">
+                    <button type="submit" class="btn btn-success btn-block">Send</button>
                 </div>
+                </form>
                 <div class="status"></div>
             </div>
             <!--Grid column-->
