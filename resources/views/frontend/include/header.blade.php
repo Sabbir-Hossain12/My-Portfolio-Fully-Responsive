@@ -53,7 +53,7 @@
                     </li>
                 </ul>
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <a href="{{$basicInfo->cv_link}}" target="_blank">
+                    <a href="{{$basicInfo->cv_link ?? '#'}}" target="_blank">
                         <button class="btn btn-success">My CV</button>
                     </a>
                 </div>

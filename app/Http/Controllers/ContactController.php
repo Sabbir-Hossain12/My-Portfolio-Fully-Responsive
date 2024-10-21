@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Models\Contact;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -41,8 +42,8 @@ class ContactController extends Controller
         Mail::to(env('MAIL_FROM_ADDRESS'))->send(new ContactMail($request->name, $request->email,$request->subject, $request->message));
         
 //        return redirect()->back()->with('success', 'Your message has been sent successfully.');
-        Toastr::success('Success','Data insert successfully');
-        return response()->json(['success' => 'Your message has been sent successfully.']);
+        Toastr::success('Success','Your message has been sent successfully.');
+        return redirect()->back();
     }
 
     /**

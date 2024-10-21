@@ -75,17 +75,17 @@
                 <ul class="list-unstyled mb-0">
                     <li>
                         <i class="fas fa-map-marker-alt fa-2x"></i>
-                        <p>549 Dhaka, Bangladesh</p>
+                        <p>{{$basicInfo->address ?? 'Dhaka,Bangladesh'}}</p>
                     </li>
 
                     <li>
                         <i class="fas fa-phone mt-4 fa-2x"></i>
-                        <p>+880 1926241906</p>
+                        <p>{{$basicInfo->phone ?? '+8801926241906'}}</p>
                     </li>
 
                     <li>
                         <i class="fas fa-envelope mt-4 fa-2x"></i>
-                        <p>h.sabbir36@yahoo.com</p>
+                        <p>{{$basicInfo->email ?? 'h.sabbir36@yahoo.com'}}</p>
                     </li>
                 </ul>
             </div>
